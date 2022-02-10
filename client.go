@@ -102,6 +102,21 @@ func (c *Client) Publish(ctx context.Context, channel string, data []byte, opts 
 	return decodePublish(resp.Result)
 }
 
+func (c *Client) Gen(ctx context.Context, user string) string {
+	pipe := c.Pipe()
+	err := pipe.AddGenToken(user)
+	if err != nil {
+		return ""
+	}
+	result, err := c.SendPipe(ctx, pipe)
+	// fmt.Println(result)
+	if err != nil {
+		return ""
+	}
+	resp := result[0]
+	return decodeGen(resp.Result)
+}
+
 // Broadcast allows to broadcast the same data into many channels..
 func (c *Client) Broadcast(ctx context.Context, channels []string, data []byte, opts ...PublishOption) (BroadcastResult, error) {
 	pipe := c.Pipe()
@@ -289,6 +304,16 @@ func decodePublish(result []byte) (PublishResult, error) {
 		return PublishResult{}, err
 	}
 	return r, nil
+}
+
+func decodeGen(result []byte) string {
+	var r map[string]string
+	err := json.Unmarshal(result, &r)
+	if err != nil {
+		return ""
+	}
+	// fmt.Println(r)
+	return r["token"]
 }
 
 func decodeBroadcast(result []byte) (BroadcastResult, error) {

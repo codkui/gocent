@@ -49,6 +49,20 @@ func (p *Pipe) AddPublish(channel string, data []byte, opts ...PublishOption) er
 	return p.add(cmd)
 }
 
+type genRequest struct {
+	User string `json:"user"`
+}
+
+func (p *Pipe) AddGenToken(user string) error {
+	cmd := Command{
+		Method: "gen_token",
+		Params: genRequest{
+			User: user,
+		},
+	}
+	return p.add(cmd)
+}
+
 type broadcastRequest struct {
 	Channels []string        `json:"channels"`
 	Data     json.RawMessage `json:"data"`
