@@ -1,12 +1,12 @@
 Gocent
 ======
 
-Gocent is a [Go](http://golang.org/) HTTP API client for [Centrifugo](https://github.com/centrifugal/centrifugo) real-time messaging server.
+Gocent is a [Go](http://golang.org/) HTTP API client for [Centrifugo](https://github.com/codkui/centrifugo) real-time messaging server.
 
 Documentation
 -------------
 
-- [API Reference](http://godoc.org/github.com/centrifugal/gocent)
+- [API Reference](http://godoc.org/github.com/codkui/gocent)
 
 Installation
 ------------
@@ -14,7 +14,7 @@ Installation
 Install Gocent using the "go get" command:
 
 ```
-go get github.com/centrifugal/gocent/v3
+go get github.com/codkui/gocent/v3
 ```
 
 License
