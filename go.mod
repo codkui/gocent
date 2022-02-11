@@ -1,3 +1,3 @@
-module github.com/codkui/gocent/v3
+module gocent.com
 
 go 1.16

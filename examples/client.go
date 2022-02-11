@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/codkui/gocent/v3"
+	"gocent.com"
 )
 
 func main() {

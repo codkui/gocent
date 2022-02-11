@@ -14,7 +14,7 @@ Installation
 Install Gocent using the "go get" command:
 
 ```
-go get github.com/codkui/gocent/v3
+go get gocent.com
 ```
 
 License

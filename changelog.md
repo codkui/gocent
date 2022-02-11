@@ -8,7 +8,7 @@
 
 ```
 gorelease -base v3.0.0 -version v3.1.0
-github.com/codkui/gocent/v3
+gocent.com
 --------------------------------
 Compatible changes:
 - (*Client).Subscribe: added
